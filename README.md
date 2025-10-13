@@ -1,4 +1,20 @@
-# Labbgrund till Moment 4 i kursen DT084G, Introduktion till programmering i JavaScript
-Använd dessa filer som grund till din laboration.
+## Laboration 4, introduktion till JavaScript
 
-OBS: Uppdatera texten i denna README-fil så att den beskriver din labb, samt inkludera ditt namn och student-id.
+***
+
+Skapa en webbapplikation som genererar ett digitalt studentkort.
+
+#### Användare kan lägga in:
+
+👤 Namn
+✉️ E-post
+☎️ Telefonnummer
+
+Det går också att ändra typsnitt, samt rensa alla fält.
+
+***
+
+#### Om mig
+
+Studerar Webbutveckling på Mittuniversitetet. ✌️
+Kodat i Visual Studio Code.

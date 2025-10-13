@@ -1,3 +1,4 @@
+// Lösning till moment 4, Frida Pihlström
 "use strict";
 
 // Eventlyssnare för DOM-inladdning och knapptryck.
@@ -11,24 +12,24 @@ document.addEventListener("DOMContentLoaded", () => {
 function addInfo() {
 
     // Läs in all info
-    const nameEl = document.querySelector("#fullname").value;
+    const nameEl = document.querySelector("#fullname").value.trim();
 
-    const emailEl = document.querySelector("#email").value;
+    const emailEl = document.querySelector("#email").value.trim();
 
-    const phoneEl = document.querySelector("#phone").value;
+    const phoneEl = document.querySelector("#phone").value.trim();
 
 
     // Array för felmeddelanden
     const errors = [];
 
     // Kontrollera den inmatade informationen och ge felmeddelande.
-    if (nameEl === "") {
+    if (!nameEl) {
         errors.push("Du måste fylla i ett namn!");
     }
-    if (emailEl === "") {
+    if (!emailEl.includes("@")) {
         errors.push("Du måste fylla i en epostadress!");
     }
-    if (phoneEl === "") {
+    if (isNaN(phoneEl)) {
         errors.push("Du måste fylla i ett telefonnummer!");
     }
 
@@ -53,7 +54,7 @@ function addInfo() {
     const printPhone = document.querySelector("#previewphone");
     printPhone.textContent = phoneEl;
 
-    
+
     // Läs in vald font
     const newFont = document.querySelector("#font").value;
     const changeFont = document.querySelector(".card");
@@ -70,4 +71,3 @@ function clearAll() {
     document.querySelector("#phone").value = "";
     document.querySelector("#font").value = "Georgia";
 }
-
