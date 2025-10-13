@@ -3,20 +3,18 @@
 // Eventlyssnare för DOM-inladdning och knapptryck.
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#generate").addEventListener("click", addInfo);
-    document.querySelector("#clear").addEventListener("click");
+    document.querySelector("#clear").addEventListener("click", clearAll);
 });
 
 
 // Funktion för att läsa in all inmatad data.
 function addInfo() {
 
-    // Läs in namn
+    // Läs in all info
     const nameEl = document.querySelector("#fullname").value;
 
-    // Läs in mail
     const emailEl = document.querySelector("#email").value;
 
-    // Läs in telefonnummer
     const phoneEl = document.querySelector("#phone").value;
 
 
@@ -46,15 +44,12 @@ function addInfo() {
     }
 
     // Skriv ut allt på kortet.
-    // Skriv ut namn
     const printName = document.querySelector("#previewfullname");
     printName.textContent = nameEl;
 
-    // Skriv ut mail
     const printEmail = document.querySelector("#previewemail");
     printEmail.textContent = emailEl;
 
-    // Skriv ut telefonnummer
     const printPhone = document.querySelector("#previewphone");
     printPhone.textContent = phoneEl;
 
@@ -63,8 +58,16 @@ function addInfo() {
     const newFont = document.querySelector("#font").value;
     const changeFont = document.querySelector(".card");
     changeFont.style.fontFamily = newFont;
+
+    clearAll();
 }
 
 
-// Funktion för att rensa alla fält.
+// Funktion för att rensa alla fält, rensa-knapp
+function clearAll() {
+    document.querySelector("#fullname").value = "";
+    document.querySelector("#email").value = "";
+    document.querySelector("#phone").value = "";
+    document.querySelector("#font").value = "Georgia";
+}
 
