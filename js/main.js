@@ -10,37 +10,55 @@ document.addEventListener("DOMContentLoaded", () => {
 // Funktion för att läsa in all inmatad data.
 function addInfo() {
 
-    // läs in namn
+    // Läs in namn
     const nameEl = document.querySelector("#fullname").value;
 
-    // läs in mail
+    // Läs in mail
     const emailEl = document.querySelector("#email").value;
 
-    // läs in telefonnummer
+    // Läs in telefonnummer
     const phoneEl = document.querySelector("#phone").value;
 
 
-// Kontrollera den inmatade informationen.
+    // Array för felmeddelanden
+    const errors = [];
 
+    // Kontrollera den inmatade informationen och ge felmeddelande.
+    if (nameEl === "") {
+        errors.push("Du måste fylla i ett namn!");
+    }
+    if (emailEl === "") {
+        errors.push("Du måste fylla i en epostadress!");
+    }
+    if (phoneEl === "") {
+        errors.push("Du måste fylla i ett telefonnummer!");
+    }
 
+    // Skriv ut felmeddelanden
+    const errorEl = document.querySelector("#errorlist");
+    errorEl.innerHTML = "";             //rensa tidigare felmeddelanden
+    if (errors.length > 0) {
+        errors.forEach(error => {
+            const li = document.createElement("li"); 
+            li.textContent = error;
+            errorEl.appendChild(li);
+        });
+    }
 
-// Skapa felmeddelanden.
-
-
-    // skriv ut namn
+    // Skriv ut namn
     const printName = document.querySelector("#previewfullname");
     printName.textContent = nameEl;
 
-    // skriv ut mail
+    // Skriv ut mail
     const printEmail = document.querySelector("#previewemail");
     printEmail.textContent = emailEl;
 
-    // skriv ut telefonnummer
+    // Skriv ut telefonnummer
     const printPhone = document.querySelector("#previewphone");
     printPhone.textContent = phoneEl;
 
     
-    // läs in vald font
+    // Läs in vald font
 
 }
 
