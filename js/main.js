@@ -27,9 +27,20 @@ function addInfo() {
 // Skapa felmeddelanden.
 
 
+    // skriv ut namn
+    const printName = document.querySelector("#previewfullname");
+    printName.textContent = nameEl;
 
-// Skriv ut all information till DOM.
+    // skriv ut mail
+    const printEmail = document.querySelector("#previewemail");
+    printEmail.textContent = emailEl;
 
+    // skriv ut telefonnummer
+    const printPhone = document.querySelector("#previewphone");
+    printPhone.textContent = phoneEl;
+
+    
+    // läs in vald font
 
 }
 
