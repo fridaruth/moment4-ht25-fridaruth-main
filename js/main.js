@@ -45,6 +45,7 @@ function addInfo() {
         });
     }
 
+    // Skriv ut allt på kortet.
     // Skriv ut namn
     const printName = document.querySelector("#previewfullname");
     printName.textContent = nameEl;
@@ -59,7 +60,9 @@ function addInfo() {
 
     
     // Läs in vald font
-
+    const newFont = document.querySelector("#font").value;
+    const changeFont = document.querySelector(".card");
+    changeFont.style.fontFamily = newFont;
 }
 
 
