@@ -1,10 +1,10 @@
-// Lösning till moment 4, Frida Pihlström
+/* Lösning till Laboration 4, skapa webbapplikation som genererar studentkort, av Frida Pihlström ht25 */
 "use strict";
 
 // Eventlyssnare för DOM-inladdning och knapptryck.
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#generate").addEventListener("click", addInfo);
-    document.querySelector("#clear").addEventListener("click", clearAll);
+    document.querySelector("#clear").addEventListener("click", clearButton);
 });
 
 
@@ -42,6 +42,7 @@ function addInfo() {
             li.textContent = error;
             errorEl.appendChild(li);
         });
+        return;
     }
 
     // Skriv ut allt på kortet.
@@ -61,13 +62,26 @@ function addInfo() {
     changeFont.style.fontFamily = newFont;
 
     clearAll();
+    errorEl.innerHTML = "";
 }
 
 
-// Funktion för att rensa alla fält, rensa-knapp
+// Funktion för att rensa alla fält
 function clearAll() {
     document.querySelector("#fullname").value = "";
     document.querySelector("#email").value = "";
     document.querySelector("#phone").value = "";
     document.querySelector("#font").value = "Georgia";
+}
+
+// Funktion för rensa-knapp
+function clearButton() {
+    clearAll();
+
+    // rensa errorlista
+    document.querySelector("#errorlist").innerHTML = ""; 
+    // rensa preview-kort
+    document.querySelector("#previewfullname").textContent = ""; 
+    document.querySelector("#previewemail").textContent = "";
+    document.querySelector("#previewphone").textContent = "";
 }
