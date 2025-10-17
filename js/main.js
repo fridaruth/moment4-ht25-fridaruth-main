@@ -29,7 +29,7 @@ function addInfo() {
     if (!emailEl.includes("@")) {
         errors.push("Du måste fylla i en epostadress!");
     }
-    if (isNaN(phoneEl)) {
+    if (isNaN(phoneEl) | (!phoneEl)) {
         errors.push("Du måste fylla i ett telefonnummer!");
     }
 
